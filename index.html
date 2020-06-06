@@ -1,35 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css.css" />
 
     <title>Event Registration</title>
   </head>
   <body>
-
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
               <label for="name" class="cols-sm-2 control-label">Name</label>
               <div class="cols-sm-10">
                 <div class="input-group">
-                  <input id="prev-name" type="text" class="form-control" disabled/>
+                  <input
+                    id="prev-name"
+                    type="text"
+                    class="form-control"
+                    disabled
+                  />
                 </div>
               </div>
             </div>
@@ -38,175 +62,288 @@
               <label for="email" class="cols-sm-2 control-label">Email</label>
               <div class="cols-sm-10">
                 <div class="input-group">
-                  <input id="prev-email" type="email" class="form-control" disabled/>
+                  <input
+                    id="prev-email"
+                    type="email"
+                    class="form-control"
+                    disabled
+                  />
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="phone" class="cols-sm-2 control-label">Phone no.</label>
+              <label for="phone" class="cols-sm-2 control-label"
+                >Phone no.</label
+              >
               <div class="cols-sm-10">
                 <div class="input-group">
-                  <input id="prev-phone" type="text" class="form-control" disabled/>
+                  <input
+                    id="prev-phone"
+                    type="text"
+                    class="form-control"
+                    disabled
+                  />
                 </div>
               </div>
             </div>
-            
+
             <div class="form-group">
-              <label for="id_card" class="cols-sm-2 control-label">ID card</label>
+              <label for="id_card" class="cols-sm-2 control-label"
+                >ID card</label
+              >
               <div class="cols-sm-10">
                 <div class="input-group">
-                  <img id="show-image" width="200px"/>
+                  <img id="show-image" width="200px" />
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <label for="registration-type" class="cols-sm-2 control-label"
+                >Registration type</label
+              >
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input
+                    id="prev-type"
+                    type="text"
+                    class="form-control"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tickets" class="cols-sm-2 control-label"
+                >No. of team members<span><sup> *</sup></span></label
+              >
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <input
+                    id="prev-team"
+                    type="number"
+                    class="form-control"
+                    value="1"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="heading">
+        <div class="panel-title text-center">
+          <h1 class="title">Event Registration</h1>
+          <hr />
+        </div>
+      </div>
+
+      <div class="main-login main-center">
+        <form
+          class="form-horizontal"
+          method="POST"
+          action="register.php"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label"
+              >Name<span><sup> *</sup></span></label
+            >
+            <div class="cols-sm-10">
+              <div id="input-name" class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  placeholder="Enter your name"
+                  oninput="update_name(this.value)"
+                />
+              </div>
+            </div>
+          </div>
 
           <div class="form-group">
-              <label for="registration-type" class="cols-sm-2 control-label">Registration type</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                    <input id="prev-type" type="text" class="form-control" disabled>
-                </div>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="tickets" class="cols-sm-2 control-label">No. of team members<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                    <input id="prev-team" type="number" class="form-control" value="1" disabled />
-                </div>
-              </div>
-            </div>
-
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class="container" >
-    <div class="heading ">
-      <div class="panel-title text-center">
-        <h1 class="title">Event Registration</h1>
-          <hr />
-      </div>
-    </div> 
-              
-    <div class="main-login main-center">
-
-      <form class="form-horizontal" method="POST" action="register.php" enctype="multipart/form-data">
-            
-            <div class="form-group">
-              <label for="name" class="cols-sm-2 control-label">Name<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div id="input-name" class="input-group">
-                  <input type="text" class="form-control" name="name"  placeholder="Enter your name" oninput="update_name(this.value)" />
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Email<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <input type="email" class="form-control" name="email"  placeholder="Enter your Email" oninput="update_email(this.value)"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="cols-sm-2 control-label">Phone no.<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <input type="text" class="form-control" name="phone"   placeholder="Enter your phone no." title="Please enter a 10 digit valid phone number" pattern="[1-9]{1}[0-9]{9}" oninput="update_phone(this.value)"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="id_card" class="cols-sm-2 control-label">Upload ID card<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <input id="file" type="file" class="id-card" name="id_card" accept="image/png, image/jpeg" onchange="loadFile(event)" />
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-            <label for="registration-type" class="cols-sm-2 control-label">Registration type<span><sup> *</sup></span></label>
+            <label for="email" class="cols-sm-2 control-label"
+              >Email<span><sup> *</sup></span></label
+            >
             <div class="cols-sm-10">
               <div class="input-group">
-                  <select name="registration-type" class="form-control selectsearch" required onchange="myFunction(this.value)">
-                    <option selected disabled>select</option>
-                    <option>self</option>
-                    <option>Group</option>
-                    <option >Corporate</option>
-                    <option >Others</option>
-                  </select>
-                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Enter your Email"
+                  oninput="update_email(this.value)"
+                />
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="tickets" class="cols-sm-2 control-label">No. of team members<span><sup> *</sup></span></label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                    <input id="search-form" type="number" class="form-control" name="tickets" oninput="update_team(this.value)"/>
-                </div>
+          <div class="form-group">
+            <label for="phone" class="cols-sm-2 control-label"
+              >Phone no.<span><sup> *</sup></span></label
+            >
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="phone"
+                  placeholder="Enter your phone no."
+                  title="Please enter a 10 digit valid phone number"
+                  pattern="[1-9]{1}[0-9]{9}"
+                  oninput="update_phone(this.value)"
+                />
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <button id="preview" type="button" class="btn btn-primary btn-lg btn-block preview-button" data-toggle="modal" data-target="#exampleModal">Preview</button><br/>
-              <input type="submit" name="submit" class="btn btn-success btn-lg btn-block submit-button" value="Submit" />
-              <br/>
-              <center><p id="mandatory"><span><sup> *</sup></span> <i>all fields are mandatory</i></p></center>
+          <div class="form-group">
+            <label for="id_card" class="cols-sm-2 control-label"
+              >Upload ID card<span><sup> *</sup></span></label
+            >
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <input
+                  id="file"
+                  type="file"
+                  class="id-card"
+                  name="id_card"
+                  accept="image/png, image/jpeg"
+                  onchange="loadFile(event)"
+                />
+              </div>
             </div>
+          </div>
 
-      </form>
+          <div class="form-group">
+            <label for="registration-type" class="cols-sm-2 control-label"
+              >Registration type<span><sup> *</sup></span></label
+            >
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <select
+                  name="registration-type"
+                  class="form-control selectsearch"
+                  required
+                  onchange="myFunction(this.value)"
+                >
+                  <option selected disabled>select</option>
+                  <option>self</option>
+                  <option>Group</option>
+                  <option>Corporate</option>
+                  <option>Others</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-    </div>
-      
+          <div class="form-group">
+            <label for="tickets" class="cols-sm-2 control-label"
+              >No. of team members<span><sup> *</sup></span></label
+            >
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <input
+                  id="search-form"
+                  type="number"
+                  class="form-control"
+                  name="tickets"
+                  oninput="update_team(this.value)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button
+              id="preview"
+              type="button"
+              class="btn btn-primary btn-lg btn-block preview-button"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Preview</button
+            ><br />
+            <input
+              type="submit"
+              name="submit"
+              class="btn btn-success btn-lg btn-block submit-button"
+              value="Submit"
+            />
+            <br />
+            <center>
+              <p id="mandatory">
+                <span><sup> *</sup></span> <i>all fields are mandatory</i>
+              </p>
+            </center>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
     <script>
       function myFunction(val) {
-   var x = document.getElementById("search-form");
-    document.getElementById("prev-type").value=val;
-    if(val == "self"){
-      x.setAttribute("value", "1");
-    }
-}
+        var x = document.getElementById("search-form");
+        document.getElementById("prev-type").value = val;
+        if (val == "self") {
+          x.setAttribute("value", "1");
+        }
+      }
 
-function update_name(val){
-  document.getElementById("prev-name").setAttribute("value", val);
-}
+      function update_name(val) {
+        document.getElementById("prev-name").setAttribute("value", val);
+      }
 
-function update_email(val){
-  document.getElementById("prev-email").setAttribute("value", val);
-}
+      function update_email(val) {
+        document.getElementById("prev-email").setAttribute("value", val);
+      }
 
-function update_phone(val){
-  document.getElementById("prev-phone").setAttribute("value", val);
-}
+      function update_phone(val) {
+        document.getElementById("prev-phone").setAttribute("value", val);
+      }
 
-function loadFile(event){
-  var image = document.getElementById('show-image');
-  image.src = URL.createObjectURL(event.target.files[0]);
-}
+      function loadFile(event) {
+        var image = document.getElementById("show-image");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      }
 
-function update_team(val){
-  document.getElementById("prev-team").value = val;
-}
+      function update_team(val) {
+        document.getElementById("prev-team").value = val;
+      }
     </script>
     <script src="./js.js"></script>
   </body>
