@@ -4,13 +4,13 @@ if($mysqli->connect_error) {
   exit('Could not connect');
 }
 
-$sql = "SELECT `id`, `Name`, `Email`, `phone`, `Registration type`, `No of tickets`, `ID Card`, `date` FROM `registrations` WHERE id = ?";
+$sql = "SELECT `id`, `Name`, `Email`, `phone`, `Registration type`, `No of tickets`, `ID Card`, `date`, `Present` FROM `registrations` WHERE id = ?";
 
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("s", $_GET['q']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($id, $name, $email, $phone, $registration, $tickets, $id_card, $date);
+$stmt->bind_result($id, $name, $email, $phone, $registration, $tickets, $id_card, $date, $present);
 $stmt->fetch();
 $stmt->close();
 
@@ -40,6 +40,10 @@ echo "</tr>";
 echo "<tr>";
 echo "<th>Date</th>";
 echo "<td>" . $date . "</td>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>Present</th>";
+echo "<td>" . $present . "</td>";
 echo "</tr>";
 echo "</tbody";
 echo "</table>";

@@ -9,6 +9,20 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+
+ if (array_key_exists("present", $_POST)) {
+
+$sql = "UPDATE `registrations` SET Present = 'YES' WHERE id = ".$_POST['admin_enter'];
+    
+        if (mysqli_query($conn, $sql)) {
+          
+            echo "<script>alert('sucessfull!!')</script>";
+       } else {
+       
+            echo "<script>alert('not sucessfull!!')</script>";
+       
+       }
+}
 ?>
 
 <!doctype html>
@@ -41,6 +55,20 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
   </div>
 </div>
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Take Attendences</h2>
+                <form name="send" method="POST" >
+                    <div class="form-group">
+                        <label class="cols-sm-2 control-label" for="admin_enter">Enter the ID</label>
+                        <input class="form-control" type="text" name="admin_enter" placeholder = "ID" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="present" value="Mark Present">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <h2>Number of Registrations</h2>
